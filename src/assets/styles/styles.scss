@@ -1,9 +1,9 @@
 @import "fonts";
 @import "icons";
-@import "mixins";
 
 // Default Font
-$fontFamily: "";
+$fontFamily: "Gilroy";
+$fontSize: 16;
 
 // Main Container Sizes & Breakpoints
 $minWidth: 320px;
@@ -15,10 +15,11 @@ $md3: 767.98;
 $md4: 479.98;
 
 @import "null";
+@import "mixins";
 
 body {
 	color: #000;
-	font-size: 16px;
+	font-size: $fontSize + px;
 	&._lock {
 		overflow: hidden;
 	}
