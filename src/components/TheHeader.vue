@@ -9,7 +9,7 @@
                             <nav class="menu__body">
                                 <ul class="menu__list">
                                     <li class="menu__item">
-                                        <a href="" class="menu__link">Products</a>
+                                        <a href="javascript:;" class="menu__link">Products</a>
                                         <button type="button" class="menu__arrow _icon-arrow-down"></button>
                                         <ul class="menu__sub-list">
                                             <li class="menu__sub-item">
@@ -27,7 +27,7 @@
                                         </ul>
                                     </li>
                                     <li class="menu__item">
-                                        <a href="" class="menu__link">Rooms</a>
+                                        <a href="javascript:;" class="menu__link">Rooms</a>
                                         <button type="button" class="menu__arrow _icon-arrow-down"></button>
                                         <ul class="menu__sub-list">
                                             <li class="menu__sub-item">
@@ -146,6 +146,24 @@ export default {
         margin: 0 3px;
         padding: 5px 0;
         position: relative;
+
+        &:hover {
+            .menu__sub-list {
+                transform: translate(0, 0);
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            .menu__arrow {
+                transform: rotate(-180deg);
+            }
+
+            .menu__arrow,
+            .menu__link {
+                color: $orangeColor;
+            }
+        }
     }
 
     &__link {
@@ -174,7 +192,9 @@ export default {
             min-width: 200px;
             left: 0;
             position: absolute;
+            pointer-events: none;
             top: 100%;
+            z-index: 1;
         }
     }
 
