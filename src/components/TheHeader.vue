@@ -125,6 +125,12 @@ export default {
         font-weight: 700;
         line-height: 1.5;
     }
+
+    &__search {
+        @media (min-width: $md2 + px) {
+            flex: 1 1 auto;
+        }
+    }
 }
 
 .menu {
@@ -207,6 +213,40 @@ export default {
     &__sub-link {
         color: #FFF;
         line-height: 1.5;
+    }
+}
+
+.search-form {
+    max-width: 470px;
+
+    &__icon {
+        display: none;
+    }
+
+    &__form {
+        background-color: #FFF;
+        display: flex;
+        align-items: center;
+    }
+
+    &__submit {
+        flex: 0 0 45px;
+        height: 45px;
+        color: #333;
+        font-size: 16px;
+        transition: background-color .3s ease 0s;
+
+        &:hover {
+            background-color: $orangeColor;
+        }
+    }
+
+    &__input {
+        font-size: 14px;
+        line-height: 1.5;
+        color: $darkGrayColor;
+        width: 100%;
+        padding: 0 10px;
     }
 }
 </style>
