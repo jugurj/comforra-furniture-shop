@@ -65,7 +65,7 @@
 			transition: all 0.3s ease 0s;
 			width: 11px;
 			height: 7px;
-			background: url("../icons/check.svg") center / 100% no-repeat;
+			background: url("/assets/icons/check.svg") center / 100% no-repeat;
 		}
 	}
 	&__input {
@@ -152,7 +152,7 @@ textarea.input {
 		opacity: 0;
 		visibility: hidden;
 		&:checked + .checkbox__text:before {
-			background: #fff url("../icons/check.svg") center no-repeat;
+			background: #fff url("/assets/icons/check.svg") center no-repeat;
 		}
 	}
 	// .checkbox__text
