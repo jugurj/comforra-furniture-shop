@@ -90,6 +90,8 @@ export default {
 </script>
 
 <style lang="scss">
+// @import "@/assets/styles/styles.scss";
+
 .header {
 	position: absolute;
 	width: 100%;
@@ -123,13 +125,68 @@ export default {
         font-weight: 700;
         line-height: 1.5;
     }
+}
 
-	// .header__content
-	&__content {
-	}
+.menu {
+    flex: 0 1 420px;
 
-	// .header__menu
-	&__menu {
-	}
+    &__list {
+        @media (min-width: $md3 + px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0 3px;
+        padding: 5px 0;
+        position: relative;
+    }
+
+    &__link {
+        font-weight: 500;
+        color: inherit;
+        transition: color .3s ease 0s;
+    }
+
+    &__arrow {
+        margin-left: 8px;
+        transition: all .3s ease 0s;
+        font-size: 8px;
+    }
+
+    &__sub-list {
+        position: relative;
+        background-color: $orangeColor;
+        padding: 15px;
+        flex: 1 1 100%;
+
+        @media (min-width: $md3 + px) {
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease 0s;
+            transform: translate(0px, 10px);
+            min-width: 200px;
+            left: 0;
+            position: absolute;
+            top: 100%;
+        }
+    }
+
+    &__sub-item {
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__sub-link {
+        color: #FFF;
+        line-height: 1.5;
+    }
 }
 </style>
