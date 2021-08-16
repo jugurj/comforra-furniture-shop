@@ -84,7 +84,9 @@
               class="actions-header__item actions-header__item--favorites _icon-favorite"
             ></a>
             <div href="" class="actions-header__item cart-header">
-              <a href="" class="cart-header__icon _icon-cart"></a>
+              <a href="" class="cart-header__icon _icon-cart">
+                <span>0</span>
+              </a>
               <div class="cart-header__body">
                 <ul class="cart-header__list cart-list"></ul>
               </div>
@@ -294,6 +296,13 @@ export default {
         color: $orangeColor;
       }
     }
+
+    &--user {
+      overflow: hidden;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+    }
   }
 }
 .cart-header {
@@ -306,6 +315,21 @@ export default {
 
     &:hover {
       color: $orangeColor;
+    }
+
+    span {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: -10px;
+      right: -10px;
+      border-radius: 50%;
+      background-color: $orangeColor;
+      color: #fff;
+      font-size: 12px;
     }
   }
 }
