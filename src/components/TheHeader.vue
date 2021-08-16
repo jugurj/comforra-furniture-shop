@@ -143,6 +143,10 @@ export default {
     display: flex;
     align-items: center;
     flex: 0 0 500 / 1240 * 100%;
+
+    @media (max-width: $md2+px) {
+      flex: 1 1 auto;
+    }
   }
 
   &__logo {
@@ -153,6 +157,8 @@ export default {
   }
 
   &__search {
+    margin-right: 20px;
+
     @media (min-width: $md2 + px) {
       flex: 1 1 auto;
     }
@@ -245,15 +251,45 @@ export default {
 .search-form {
   max-width: 470px;
 
+  &--active {
+    .search-form__form {
+      opacity: 1;
+      top: 100%;
+      visibility: visible;
+    }
+
+    .search-form__icon {
+      color: $orangeColor;
+    }
+  }
+
   &__icon {
-    display: none;
+    position: relative;
+    z-index: 5;
+    font-size: 22px;
+    color: #262f56;
+
+    @media (min-width: $md2+px) {
+      display: none;
+    }
   }
 
   &__form {
     background-color: #fff;
     display: flex;
     align-items: center;
-    margin-right: 20px;
+
+    @media (max-width: $md2+px) {
+      box-shadow: 0 0 5px rgba(212, 209, 205, 0.3);
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: -100%;
+      z-index: 5;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease 0s;
+    }
   }
 
   &__submit {
