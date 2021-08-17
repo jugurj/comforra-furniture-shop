@@ -63,17 +63,14 @@
                 'search-form',
                 searchFormOpen ? 'search-form--active' : '',
               ]"
+              v-click-outside="closeSearchForm"
             >
               <button
                 type="button"
                 @click="toggleSearchForm"
                 class="search-form__icon _icon-search"
               ></button>
-              <form
-                action=""
-                class="search-form__form"
-                v-click-outside="closeSearchForm"
-              >
+              <form action="" class="search-form__form">
                 <button
                   type="submit"
                   class="search-form__submit _icon-search"
