@@ -58,9 +58,15 @@
             </div>
           </div>
           <div class="header__search">
-            <div class="search-form">
+            <div
+              :class="[
+                'search-form',
+                searchFormOpen ? 'search-form--active' : '',
+              ]"
+            >
               <button
                 type="button"
+                @click="toggleSearchForm"
                 class="search-form__icon _icon-search"
               ></button>
               <form action="" class="search-form__form">
@@ -112,6 +118,16 @@
 <script>
 export default {
   name: "TheHeader",
+  data() {
+    return {
+      searchFormOpen: false,
+    };
+  },
+  methods: {
+    toggleSearchForm() {
+      this.searchFormOpen = !this.searchFormOpen;
+    },
+  },
 };
 </script>
 
