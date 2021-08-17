@@ -69,7 +69,11 @@
                 @click="toggleSearchForm"
                 class="search-form__icon _icon-search"
               ></button>
-              <form action="" class="search-form__form">
+              <form
+                action=""
+                class="search-form__form"
+                v-click-outside="closeSearchForm"
+              >
                 <button
                   type="submit"
                   class="search-form__submit _icon-search"
@@ -126,6 +130,9 @@ export default {
   methods: {
     toggleSearchForm() {
       this.searchFormOpen = !this.searchFormOpen;
+    },
+    closeSearchForm() {
+      this.searchFormOpen = false;
     },
   },
 };
