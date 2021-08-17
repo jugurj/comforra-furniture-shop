@@ -4,7 +4,7 @@ import App from "./App.vue";
 
 const app = createApp(App);
 
-app.directive("click-outside", {
+const clickOutsideDirective = {
   beforeMount: (el, binding) => {
     el.clickOutsideEvent = (event) => {
       // here I check that click was outside the el and his children
@@ -18,6 +18,6 @@ app.directive("click-outside", {
   unmounted: (el) => {
     document.removeEventListener("click", el.clickOutsideEvent);
   },
-});
+};
 
-app.mount("#app");
+app.directive("click-outside", clickOutsideDirective).mount("#app");
