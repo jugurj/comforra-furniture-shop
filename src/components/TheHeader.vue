@@ -157,6 +157,15 @@ export default {
     align-items: center;
     padding: 5px 0;
     min-height: 125px;
+    position: relative;
+
+    @media (max-width: $md2+px) {
+      min-height: 80px;
+    }
+
+    @media (max-width: $md3+px) {
+      min-height: 50px;
+    }
   }
 
   &__main {
@@ -252,7 +261,7 @@ export default {
       position: absolute;
       pointer-events: none;
       top: 100%;
-      z-index: 1;
+      z-index: 6;
     }
   }
 
