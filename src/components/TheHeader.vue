@@ -183,6 +183,8 @@ export default {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.5;
+    position: relative;
+    z-index: 5;
   }
 
   &__search {
@@ -196,6 +198,20 @@ export default {
 
 .menu {
   flex: 0 1 420px;
+
+  &__body {
+    @media (max-width: $md3 + px) {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      top: 0;
+      left: 0;
+      background-color: #fcf8f3;
+      transition: left 0.3s ease 0s;
+      padding: 70px 15px 30px 15px;
+    }
+  }
 
   &__list {
     @media (min-width: $md3 + px) {
@@ -218,8 +234,10 @@ export default {
       .menu__sub-list {
         transform: translate(0, 0);
         opacity: 1;
+        height: auto;
         visibility: visible;
         pointer-events: auto;
+        padding: 15px;
       }
 
       .menu__arrow {
@@ -237,12 +255,20 @@ export default {
     font-weight: 500;
     color: inherit;
     transition: color 0.3s ease 0s;
+
+    @media (max-width: $md3 + px) {
+      font-size: 24px;
+      font-weight: 600;
+    }
   }
 
   &__arrow {
     margin-left: 8px;
     transition: all 0.3s ease 0s;
     font-size: 8px;
+    @media (max-width: $md3 + px) {
+      font-size: 14px;
+    }
   }
 
   &__sub-list {
@@ -262,6 +288,13 @@ export default {
       pointer-events: none;
       top: 100%;
       z-index: 6;
+    }
+
+    @media (max-width: $md3 + px) {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      padding: 0;
     }
   }
 
@@ -298,7 +331,7 @@ export default {
     font-size: 22px;
     color: #262f56;
 
-    @media (min-width: $md2+px) {
+    @media (min-width: $md2 + px) {
       display: none;
     }
   }
@@ -308,7 +341,7 @@ export default {
     display: flex;
     align-items: center;
 
-    @media (max-width: $md2+px) {
+    @media (max-width: $md2 + px) {
       box-shadow: 0 0 5px rgba(212, 209, 205, 0.3);
       position: absolute;
       width: 100%;
