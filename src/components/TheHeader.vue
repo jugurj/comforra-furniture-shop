@@ -139,10 +139,7 @@ export default {
 // @import "@/assets/styles/styles.scss";
 
 .header {
-  position: absolute;
   width: 100%;
-  top: 0;
-  left: 0;
 
   &__wrapper {
     position: fixed;
@@ -301,12 +298,26 @@ export default {
   &__sub-item {
     &:not(:last-child) {
       margin-bottom: 5px;
+
+      @media (max-width: $md3 + px) {
+        margin-bottom: 5px;
+      }
     }
   }
 
   &__sub-link {
     color: #fff;
     line-height: 1.5;
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @media (max-width: $md3 + px) {
+      font-size: 18px;
+    }
   }
 }
 
