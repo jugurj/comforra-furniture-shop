@@ -1,10 +1,10 @@
 <template>
-  <div class="footer__main">
-    <a href="" class="footer__logo">Comforra</a>
-    <div class="footer__text">
+  <div class="footer-main">
+    <a href="" class="footer-main__logo">Comforra</a>
+    <div class="footer-main__text">
       There goes some lorem ipsum text.
     </div>
-    <div class="footer__contact">
+    <div class="footer-main__contacts">
       <FooterContacts />
     </div>
   </div>
