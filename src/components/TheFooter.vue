@@ -9,6 +9,10 @@
         <div class="footer__menu">
           <FooterMenu />
         </div>
+
+        <div class="footer__subscribe">
+          <FooterSubscribe />
+        </div>
       </div>
     </div>
   </footer>
@@ -17,12 +21,14 @@
 <script>
 import FooterMain from "@/components/FooterMain.vue";
 import FooterMenu from "@/components/FooterMenu.vue";
+import FooterSubscribe from "@/components/FooterSubscribe.vue";
 
 export default {
   name: "TheFooter",
   components: {
     FooterMain,
     FooterMenu,
+    FooterSubscribe,
   },
 };
 </script>
