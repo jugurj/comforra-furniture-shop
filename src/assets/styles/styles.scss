@@ -21,48 +21,48 @@ $md4: 479.98;
 @import "ui";
 
 body {
-	background-color: #F9F1E7;
-	color: $baseColor;
-	font-size: $fontSize + px;
-	&._lock {
-		overflow: hidden;
-	}
+  background-color: #f9f1e7;
+  color: $baseColor;
+  font-size: $fontSize + px;
+  &._lock {
+    overflow: hidden;
+  }
 }
 
 .wrapper {
-	width: 100%;
-	min-height: 100%;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	&._loaded {
-	}
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  &._loaded {
+  }
 }
 
 ._container {
-	max-width: $maxWidthContainer + px;
-	margin: 0 auto;
-	padding: 0 15px;
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .page {
-	flex: 1 1 auto;
-	padding: 100px 30px 30px 30px;
-	display: flex;
+  flex: 1 1 auto;
+  padding: 100px 30px 30px 30px;
+  display: flex;
 
-	// .page__side
-	&__side {
-		flex: 0 0 300px;
-		padding: 0px 20px 0px 0px;
-	}
+  // .page__side
+  &__side {
+    flex: 0 0 300px;
+    padding: 0px 20px 0px 0px;
+  }
 
-	// .page__item
-	&__item {
-	}
+  // .page__item
+  &__item {
+  }
 
-	// .page__body
-	&__body {
-		flex: 1 1 auto;
-		min-width: 0;
-	}
+  // .page__body
+  &__body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
 }

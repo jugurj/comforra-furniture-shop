@@ -1,6 +1,9 @@
 <template>
-  <TheHeader />
-  <TheFooter />
+  <div class="wrapper">
+    <TheHeader />
+    <div class="page"></div>
+    <TheFooter />
+  </div>
 </template>
 
 <script>
