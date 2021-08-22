@@ -33,4 +33,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.footer {
+  &__body {
+    border-top: 1px solid #d8d8d8;
+    display: grid;
+    grid-template-columns: 250px 1fr 290px;
+    column-gap: 80px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+}
+</style>

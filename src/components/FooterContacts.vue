@@ -18,4 +18,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+</style>

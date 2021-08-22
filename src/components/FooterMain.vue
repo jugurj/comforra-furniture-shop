@@ -21,4 +21,20 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.footer-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__logo {
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: $grayColor;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+}
+</style>
