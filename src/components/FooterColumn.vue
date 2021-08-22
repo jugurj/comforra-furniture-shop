@@ -1,12 +1,12 @@
 <template>
   <div class="footer-column">
-    <button type="button" class="footer-menu__title">
+    <button type="button" class="footer-column__title">
       {{ columnTitle }}
     </button>
 
-    <ul class="footer-menu__list">
+    <ul class="footer-column__list">
       <li v-for="(link, index) in columnLinks" :key="index">
-        <a :href="link.url" class="footer-menu__link">
+        <a :href="link.url" class="footer-column__link">
           {{ link.title }}
         </a>
       </li>
@@ -24,4 +24,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.footer-column {
+  &__title {
+    font-weight: 700;
+    line-height: 29px;
+    font-size: 24px;
+    color: #000;
+    background-color: transparent;
+  }
+}
+</style>

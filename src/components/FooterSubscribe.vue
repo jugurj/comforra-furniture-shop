@@ -23,4 +23,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.footer-subscribe {
+  &__title {
+    font-weight: 700;
+    line-height: 29px;
+    font-size: 24px;
+    color: #000;
+  }
+}
+</style>
