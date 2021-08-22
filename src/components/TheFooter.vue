@@ -5,6 +5,7 @@
         <div class="footer__main">
           <FooterMain />
         </div>
+
         <div class="footer__menu">
           <FooterMenu />
         </div>
