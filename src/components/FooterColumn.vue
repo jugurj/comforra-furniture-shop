@@ -27,11 +27,30 @@ export default {
 <style lang="scss">
 .footer-column {
   &__title {
+    cursor: default;
     font-weight: 700;
     line-height: 29px;
     font-size: 24px;
     color: #000;
     background-color: transparent;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__link {
+    color: $darkGrayColor;
+    line-height: 1.2;
+    font-weight: 500;
+    transition: color 0.3s ease 0s;
+
+    &:hover {
+      color: $orangeColor;
+    }
   }
 }
 </style>

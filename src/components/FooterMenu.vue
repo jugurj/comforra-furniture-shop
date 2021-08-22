@@ -101,4 +101,16 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.footer-menu {
+  @media (min-width: $md3 + px) {
+    display: flex;
+  }
+
+  &__column {
+    @media (min-width: $md3 + px) {
+      flex: 0 1 33.333%;
+    }
+  }
+}
+</style>
