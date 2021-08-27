@@ -1,10 +1,10 @@
 <template>
   <div class="footer-subscribe">
     <div class="footer-subscribe__title">Stay Updated</div>
-    <form action="#" class="footer-subscribe__form">
+    <form @submit.prevent="validateForm" class="footer-subscribe__form">
       <input
         type="text"
-        name="form[]"
+        name="email"
         class="footer-subscribe__input"
         placeholder="Enter your email..."
       />
@@ -13,6 +13,10 @@
         type="submit"
         class="footer-subscribe__button _icon-send"
       ></button>
+
+      <div v-show="formHasErrors" class="footer-subscribe__form-error">
+        Error
+      </div>
     </form>
   </div>
 </template>
@@ -20,6 +24,18 @@
 <script>
 export default {
   name: "FooterSubscribe",
+  data() {
+    return {
+      formHasErrors: false,
+    };
+  },
+  methods: {
+    validateForm(e) {
+      if (e.target.elements.email.value.length < 10) {
+        this.formHasErrors = true;
+      }
+    },
+  },
 };
 </script>
 
@@ -36,6 +52,15 @@ export default {
   &__form {
     display: flex;
     position: relative;
+  }
+
+  &__form-error {
+    position: absolute;
+    top: 100%;
+    margin-top: 3px;
+    left: 12px;
+    color: #ff0000;
+    font-size: 12px;
   }
 
   // Added specifity to the rule so that icon
