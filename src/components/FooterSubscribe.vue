@@ -30,6 +30,38 @@ export default {
     line-height: 29px;
     font-size: 24px;
     color: #000;
+    margin-bottom: 16px;
+  }
+
+  &__form {
+    display: flex;
+    position: relative;
+  }
+
+  // Added specifity to the rule so that icon
+  // reset would not override background color
+  &__button[type="submit"] {
+    flex: 0 0 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background-color: $orangeColor;
+    color: #fff;
+    margin-left: 4px;
+    transition: background-color 0.3s ease 0s;
+
+    &:hover {
+      background-color: #be825c;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0 12px;
+    background-color: #f4f5f7;
+    color: #828282;
   }
 }
 </style>
