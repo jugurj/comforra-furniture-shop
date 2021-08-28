@@ -47,8 +47,6 @@ body {
 
 .page {
   flex: 1 1 auto;
-  padding: 100px 30px 30px 30px;
-  display: flex;
 
   // .page__side
   &__side {
@@ -62,7 +60,7 @@ body {
 
   // .page__body
   &__body {
-    flex: 1 1 auto;
-    min-width: 0;
+    // flex: 1 1 auto;
+    // min-width: 0;
   }
 }
