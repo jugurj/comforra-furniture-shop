@@ -25,18 +25,36 @@
             </div>
           </div>
           <div class="slider-main__body">
-            <div class="slider-main__slide">
-              <div class="slider-main__image _ibg">
-                <img src="@/assets/img/slider-image-1.jpg" alt="Image" />
-              </div>
-              <a href="#" class="slider-main__content">
-                <div class="slider-main__title">Bohauss</div>
-                <div class="slider-main__text">Luxury big sofa 2-seat</div>
-                <div class="slider-main__price _icon-arrow-link">
-                  Rp 17.000.000
+            <Swiper>
+              <SwiperSlide>
+                <div class="slider-main__slide">
+                  <div class="slider-main__image _ibg">
+                    <img src="@/assets/img/slider-image-1.jpg" alt="Image" />
+                  </div>
+                  <a href="#" class="slider-main__content">
+                    <div class="slider-main__title">Bohauss</div>
+                    <div class="slider-main__text">Luxury big sofa 2-seat</div>
+                    <div class="slider-main__price _icon-arrow-link">
+                      Rp 17.000.000
+                    </div>
+                  </a>
                 </div>
-              </a>
-            </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div class="slider-main__slide">
+                  <div class="slider-main__image _ibg">
+                    <img src="@/assets/img/slider-image-1.jpg" alt="Image" />
+                  </div>
+                  <a href="#" class="slider-main__content">
+                    <div class="slider-main__title">Bohauss</div>
+                    <div class="slider-main__text">Luxury big sofa 2-seat</div>
+                    <div class="slider-main__price _icon-arrow-link">
+                      Rp 17.000.000
+                    </div>
+                  </a>
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </main>
       </div>
@@ -45,8 +63,15 @@
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/swiper-bundle.css";
+
 export default {
   name: "MainSlider",
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
 };
 </script>
 
