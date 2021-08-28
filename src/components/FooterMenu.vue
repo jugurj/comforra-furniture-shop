@@ -111,6 +111,10 @@ export default {
     @media (min-width: $md3 + px) {
       flex: 0 1 33.333%;
     }
+
+    @media (max-width: $md3 + px) {
+      margin-bottom: 20px;
+    }
   }
 }
 </style>

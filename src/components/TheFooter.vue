@@ -42,6 +42,28 @@ export default {
     column-gap: 80px;
     padding-top: 80px;
     padding-bottom: 60px;
+
+    @media (max-width: $md1 + px) {
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 290px;
+    }
+
+    @media (max-width: $md2 + px) {
+      display: block;
+    }
+  }
+
+  &__main {
+    @media (max-width: $md1 + px) {
+      grid-column: span 2;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__menu {
+    @media (max-width: $md2 + px) {
+      margin-bottom: 40px;
+    }
   }
 }
 </style>
