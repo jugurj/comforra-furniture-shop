@@ -24,10 +24,11 @@
               ></button>
             </div>
           </div>
+          <div class="test-swiper-pagination"></div>
           <div class="slider-main__body">
             <Swiper
-              navigation
-              :pagination="{ clickable: true }"
+              :navigation="swiperNavigation"
+              :pagination="swiperPagination"
               @swiper="onSwiper"
               @slideChange="onSlideChange"
             >
@@ -93,6 +94,21 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  data() {
+    return {
+      swiperPagination: {
+        clickable: true,
+        el: ".test-swiper-pagination",
+        renderBullet: function(index, className) {
+          return '<span class="' + className + '"></span>';
+        },
+      },
+      swiperNavigation: {
+        nextEl: ".slider-arrow--next",
+        prevEl: ".slider-arrow--prev",
+      },
+    };
   },
 };
 </script>
