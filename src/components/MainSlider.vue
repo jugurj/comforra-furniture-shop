@@ -25,7 +25,26 @@
             </div>
           </div>
           <div class="slider-main__body">
-            <Swiper>
+            <Swiper
+              navigation
+              :pagination="{ clickable: true }"
+              @swiper="onSwiper"
+              @slideChange="onSlideChange"
+            >
+              <SwiperSlide>
+                <div class="slider-main__slide">
+                  <div class="slider-main__image _ibg">
+                    <img src="@/assets/img/slider-image-1.jpg" alt="Image" />
+                  </div>
+                  <a href="#" class="slider-main__content">
+                    <div class="slider-main__title">Bohauss</div>
+                    <div class="slider-main__text">Luxury big sofa 2-seat</div>
+                    <div class="slider-main__price _icon-arrow-link">
+                      Rp 17.000.000
+                    </div>
+                  </a>
+                </div>
+              </SwiperSlide>
               <SwiperSlide>
                 <div class="slider-main__slide">
                   <div class="slider-main__image _ibg">
@@ -63,8 +82,11 @@
 </template>
 
 <script>
+import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper-bundle.css";
+
+SwiperCore.use([Navigation, Pagination]);
 
 export default {
   name: "MainSlider",
