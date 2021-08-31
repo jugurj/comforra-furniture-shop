@@ -114,4 +114,51 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.main-slider {
+  background-color: #fcf8f3;
+
+  &__container {
+    position: relative;
+
+    @media (min-width: $md2+px) {
+      &::before {
+        content: "";
+        background-color: #f9f1e7;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        right: 380px;
+        height: 100%;
+      }
+    }
+  }
+
+  &__body {
+    padding-top: 140px;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: $md2 + px) {
+      padding-top: 80px;
+    }
+
+    @media (max-width: $md3 + px) {
+      padding-top: 50px;
+    }
+
+    @media (min-width: $md3 + px) {
+      display: flex;
+    }
+  }
+
+  &__content {
+    flex: 0 0 500 / 1240 * 100%;
+  }
+
+  &__slider {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+</style>
