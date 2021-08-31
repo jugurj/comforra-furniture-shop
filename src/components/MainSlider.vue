@@ -202,4 +202,44 @@ export default {
     }
   }
 }
+
+.slider-arrows {
+  display: grid;
+  grid-template-columns: repeat(2, 48px);
+  column-gap: 8px;
+
+  .slider-arrow {
+    border-radius: 50%;
+    height: 48px;
+    background-color: rgba(232, 159, 113, 0.3);
+    color: $orangeColor;
+    font-size: 12px;
+    cursor: pointer;
+    padding-top: 3px;
+    transition: all 0.3s ease 0s;
+
+    &--prev {
+      transform: rotate(90deg);
+    }
+
+    &--next {
+      transform: rotate(-90deg);
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: rgba(232, 159, 113, 13);
+    }
+
+    &--white {
+      box-shadow: 0 4px 14px 1px rgba(0, 0, 0, 0.15);
+      background-color: #fff;
+
+      &:hover {
+        background-color: $orangeColor;
+        color: #fff;
+      }
+    }
+  }
+}
 </style>
