@@ -3,12 +3,14 @@
     <div class="main-slider__container _container">
       <div class="main-slider__body">
         <div class="main-slider__content content-main">
-          <h1 class="content-main__title"></h1>
+          <h1 class="content-main__title">
+            High-Quality Furniture Just For You
+          </h1>
           <div class="content-main__text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, quo!
             Quidem esse sint quo labore ea minus, impedit neque corrupti.
           </div>
-          <a href="#" class="content-main__button">Shop now</a>
+          <a href="#" class="content-main__button btn">Shop now</a>
         </div>
         <main class="slider__slider slider-main">
           <div class="slider-main__controls controls-slider-main">
@@ -147,7 +149,7 @@ export default {
       padding-top: 50px;
     }
 
-    @media (min-width: $md3 + px) {
+    @media (min-width: $md2 + px) {
       display: flex;
     }
   }
@@ -159,6 +161,45 @@ export default {
   &__slider {
     flex: 1 1 auto;
     min-width: 0;
+  }
+}
+
+.content-main {
+  position: relative;
+  z-index: 5;
+  padding: 60px 15px;
+  background: rgba(255, 255, 255, 0.7);
+
+  @media (min-width: $md2+px) {
+    padding: 60px;
+  }
+
+  &__title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: 500;
+    color: $grayColor;
+    line-height: 1.5;
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    min-height: 60px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: $orangeColor;
+    color: #fff;
+    width: 100%;
+
+    &:hover {
+      background-color: #c77745;
+    }
   }
 }
 </style>
