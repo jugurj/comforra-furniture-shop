@@ -12,7 +12,7 @@
           </div>
           <a href="#" class="content-main__button btn">Shop now</a>
         </div>
-        <main class="slider__slider slider-main">
+        <main class="main-slider__slider slider-main">
           <div class="slider-main__controls controls-slider-main">
             <div class="controls-slider-main__dots"></div>
             <div class="controls-slider-main__arrows slider-arrows">
@@ -161,6 +161,10 @@ export default {
   &__slider {
     flex: 1 1 auto;
     min-width: 0;
+
+    @media (min-width: $md2 + px) {
+      padding-left: 32px;
+    }
   }
 }
 
@@ -201,6 +205,18 @@ export default {
       background-color: #c77745;
     }
   }
+}
+
+.slider-main {
+  &__controls {
+    margin-bottom: 20px;
+  }
+}
+
+.controls-slider-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .slider-arrows {
@@ -245,8 +261,9 @@ export default {
 
 .swiper-pagination-bullets {
   display: flex;
-  flex-wrap: wrap;
   user-select: none;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .swiper-pagination-bullet {
