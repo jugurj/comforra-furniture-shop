@@ -211,6 +211,58 @@ export default {
   &__controls {
     margin-bottom: 20px;
   }
+
+  &__image {
+    padding-bottom: 50%;
+  }
+
+  &__content {
+    min-width: 295px;
+    max-height: 300px;
+    overflow: auto;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.75);
+
+    @media (min-width: $md3 + px) {
+      position: absolute;
+      min-width: 350px;
+      bottom: 40px;
+      right: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  &__text {
+    line-height: 1.5;
+    color: $grayColor;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 16px;
+
+    &::before {
+      margin-left: 10px;
+    }
+  }
 }
 
 .controls-slider-main {
