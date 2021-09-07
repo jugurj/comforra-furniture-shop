@@ -43,7 +43,12 @@
                   <div class="slider-main__image _ibg">
                     <img src="@/assets/img/slider-image-1.jpg" alt="Image" />
                   </div>
-                  <a href="#" class="slider-main__content">
+                  <a
+                    href="#"
+                    class="slider-main__content"
+                    data-swiper-parallax-opacity="0"
+                    data-swiper-parallax-x="-100%"
+                  >
                     <div class="slider-main__title">Bohauss</div>
                     <div class="slider-main__text">Luxury big sofa 2-seat</div>
                     <div class="slider-main__price _icon-arrow-link">
@@ -55,9 +60,14 @@
               <SwiperSlide>
                 <div class="slider-main__slide">
                   <div class="slider-main__image _ibg">
-                    <img src="@/assets/img/slider-image-1.jpg" alt="Image" />
+                    <img src="@/assets/img/slider-image-2.jpg" alt="Image" />
                   </div>
-                  <a href="#" class="slider-main__content">
+                  <a
+                    href="#"
+                    class="slider-main__content"
+                    data-swiper-parallax-opacity="0"
+                    data-swiper-parallax-x="-100%"
+                  >
                     <div class="slider-main__title">Bohauss</div>
                     <div class="slider-main__text">Luxury big sofa 2-seat</div>
                     <div class="slider-main__price _icon-arrow-link">
@@ -69,9 +79,14 @@
               <SwiperSlide>
                 <div class="slider-main__slide">
                   <div class="slider-main__image _ibg">
-                    <img src="@/assets/img/slider-image-1.jpg" alt="Image" />
+                    <img src="@/assets/img/slider-image-3.jpg" alt="Image" />
                   </div>
-                  <a href="#" class="slider-main__content">
+                  <a
+                    href="#"
+                    class="slider-main__content"
+                    data-swiper-parallax-opacity="0"
+                    data-swiper-parallax-x="-100%"
+                  >
                     <div class="slider-main__title">Bohauss</div>
                     <div class="slider-main__text">Luxury big sofa 2-seat</div>
                     <div class="slider-main__price _icon-arrow-link">
@@ -89,11 +104,11 @@
 </template>
 
 <script>
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import SwiperCore, { Navigation, Pagination, Parallax } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper-bundle.css";
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Parallax]);
 
 export default {
   name: "MainSlider",
