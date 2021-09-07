@@ -155,12 +155,15 @@ export default {
   }
 
   &__content {
+    align-self: flex-start;
     flex: 0 0 500 / 1240 * 100%;
+    margin-bottom: 80px;
   }
 
   &__slider {
     flex: 1 1 auto;
     min-width: 0;
+    align-self: flex-end;
 
     @media (min-width: $md2 + px) {
       padding-left: 32px;
@@ -218,7 +221,7 @@ export default {
   }
 
   &__image {
-    padding-bottom: 50%;
+    padding-bottom: 60%;
   }
 
   &__body {
@@ -334,7 +337,7 @@ export default {
   display: flex;
   user-select: none;
   flex-wrap: wrap;
-  width: 100%;
+  flex: 1 1 auto;
 }
 
 .swiper-pagination-bullet {
