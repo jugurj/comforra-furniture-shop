@@ -208,12 +208,31 @@ export default {
 }
 
 .slider-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
   &__controls {
+    align-self: stretch;
     margin-bottom: 20px;
   }
 
   &__image {
     padding-bottom: 50%;
+  }
+
+  &__body {
+    .swiper-container {
+      overflow: visible;
+
+      @media (min-width: $md2 + px) {
+        width: 934px;
+      }
+    }
+  }
+
+  &__slide {
+    position: relative;
   }
 
   &__content {
