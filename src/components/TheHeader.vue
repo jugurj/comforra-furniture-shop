@@ -157,6 +157,20 @@ export default {
 
 .header {
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 40px;
+
+  &._scroll {
+    .header__wrapper {
+      background-color: rgba(255, 255, 255, 0.8);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+    }
+  }
 
   &__wrapper {
     position: fixed;
@@ -164,6 +178,7 @@ export default {
     left: 0;
     top: 0;
     z-index: 50;
+    transition: background-color 0.3s ease 0s;
   }
 
   &__body {
