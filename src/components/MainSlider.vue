@@ -173,6 +173,10 @@ export default {
     align-self: flex-start;
     flex: 0 0 500 / 1240 * 100%;
     margin-bottom: 80px;
+
+    @media (max-width: $md2 + px) {
+      margin: 0 -15px;
+    }
   }
 
   &__slider {
@@ -230,9 +234,18 @@ export default {
   flex-direction: column;
   align-items: flex-end;
 
+  @media (max-width: $md2 + px) {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
   &__controls {
     align-self: stretch;
     margin-bottom: 20px;
+
+    @media (max-width: $md2 + px) {
+      margin-top: 20px;
+    }
   }
 
   &__image {
@@ -245,6 +258,10 @@ export default {
 
       @media (min-width: $md2 + px) {
         width: 934px;
+      }
+
+      @media (max-width: $md2 + px) {
+        margin: 0 -15px;
       }
     }
   }
@@ -302,12 +319,6 @@ export default {
   }
 }
 
-.controls-slider-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .slider-arrows {
   display: grid;
   grid-template-columns: repeat(2, 48px);
@@ -344,6 +355,28 @@ export default {
         background-color: $orangeColor;
         color: #fff;
       }
+    }
+  }
+}
+
+.controls-slider-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__dots {
+    @media (min-width: $md2 + px) {
+      padding-right: 20px;
+    }
+
+    @media (max-width: $md2 + px) {
+      justify-content: center;
+    }
+  }
+
+  &__arrows {
+    @media (max-width: $md2 + px) {
+      display: none;
     }
   }
 }
