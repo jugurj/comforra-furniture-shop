@@ -164,10 +164,14 @@ export default {
 
   &._scroll {
     .header__wrapper {
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: #fcf8f3;
+    }
 
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.9);
+    .header__body {
+      min-height: 50px;
+
+      @media (min-width: $md2+px) {
+        min-height: 70px;
       }
     }
   }
@@ -187,6 +191,7 @@ export default {
     padding: 5px 0;
     min-height: 125px;
     position: relative;
+    transition: min-height 0.3s ease 0s;
 
     @media (max-width: $md2+px) {
       min-height: 80px;
