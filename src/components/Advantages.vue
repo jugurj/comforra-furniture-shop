@@ -42,4 +42,42 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.advantages {
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: inline-grid;
+    padding: 15px 0;
+    grid-template: auto auto / 85px 1fr;
+  }
+
+  &__icon {
+    text-align: center;
+    align-self: center;
+    grid-row: span 2;
+
+    @media (max-width: $md3 + px) {
+      padding: 0 15px 0 0;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__text {
+    line-height: 1.5;
+    color: $grayColor;
+  }
+}
+</style>
