@@ -44,8 +44,11 @@ export default {
 
 <style lang="scss">
 .advantages {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin: 80px 0;
+
+  @media (max-width: $md3 + px) {
+    margin: 40px 0;
+  }
 
   &__container {
     display: flex;
@@ -57,6 +60,14 @@ export default {
     display: inline-grid;
     padding: 15px 0;
     grid-template: auto auto / 85px 1fr;
+
+    @media (max-width: $md2 + px) {
+      min-width: 280px;
+    }
+
+    @media (max-width: $md3 + px) {
+      grid-template: auto auto / auto 1fr;
+    }
   }
 
   &__icon {
