@@ -45,6 +45,16 @@ export default {
   flex-direction: column;
   position: relative;
 
+  @media (any-hover: hover) {
+    &:hover {
+      .product-item__actions {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity 0.5s;
+      }
+    }
+  }
+
   &__labels {
     position: absolute;
     z-index: 2;
@@ -121,6 +131,73 @@ export default {
       font-weight: normal;
       margin-left: 16px;
       color: #b0b0b0;
+    }
+  }
+
+  &__actions {
+    @media (any-hover: none) {
+      padding-top: 15px;
+    }
+
+    @media (any-hover: hover) {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: visibility 0s linear 0.5s, opacity 0.5s;
+      background-color: rgba(58, 58, 58, 0.75);
+      z-index: 3;
+    }
+  }
+}
+
+.actions-product {
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__button {
+    flex: 1 1 100%;
+    color: $orangeColor;
+    font-weight: 500;
+    background-color: #fff;
+
+    &:hover {
+      background-color: $orangeColor;
+      color: #fff;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    font-weight: 600;
+    transition: color 0.3s ease 0;
+
+    &::before {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    @media (any-hover: hover) {
+      color: #fff;
+
+      &:hover {
+        color: $orangeColor;
+      }
     }
   }
 }
