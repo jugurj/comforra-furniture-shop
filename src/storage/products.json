@@ -1,6 +1,73 @@
 {
   "products": [
     {
+      "id": 1,
+      "url": "#",
+      "title": "Syltherine",
+      "text": "Comfortable tea table",
+      "labels": [
+        {
+          "type": "sale",
+          "value": "-30%"
+        },
+        {
+          "type": "new",
+          "value": "New"
+        }
+      ],
+      "image": "01.jpg",
+      "price": "2.500.000",
+      "priceOld": "3.500.000",
+      "shareUrl": "",
+      "likeUrl": ""
+    },
+    {
+      "id": 2,
+      "url": "#",
+      "title": "Leviosa",
+      "text": "Stylish cafe chair",
+      "labels": [
+        {
+          "type": "new",
+          "value": "New"
+        }
+      ],
+      "image": "02.jpg",
+      "price": "2.500.000",
+      "priceOld": "",
+      "shareUrl": "",
+      "likeUrl": ""
+    },
+    {
+      "id": 3,
+      "url": "#",
+      "title": "Lolito",
+      "text": "Luxury big sofa",
+      "labels": "",
+      "image": "03.jpg",
+      "price": "2.500.000",
+      "priceOld": "3.500.000",
+      "shareUrl": "",
+      "likeUrl": ""
+    },
+    {
+      "id": 4,
+      "url": "#",
+      "title": "Respira",
+      "text": "Minimalist fan",
+      "labels": [
+        {
+          "type": "sale",
+          "value": "-50%"
+        }
+      ],
+      "image": "04.jpg",
+      "price": "500.000",
+      "priceOld": "",
+      "shareUrl": "",
+      "likeUrl": ""
+    },
+    {
       "id": 5,
       "url": "#",
       "title": "Grifo",
