@@ -14,11 +14,15 @@
 
 <script>
 import ProductsItem from "@/components/ProductsItem.vue";
+import products from "@/storage/products.json";
 
 export default {
   name: "Products",
   components: {
     ProductsItem,
+  },
+  created() {
+    console.log(products);
   },
 };
 </script>
