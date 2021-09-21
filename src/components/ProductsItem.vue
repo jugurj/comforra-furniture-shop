@@ -1,7 +1,14 @@
 <template>
   <article class="product-item">
     <div class="product-item__labels">
-      <div class="product-item__label product-item__label--sale">-30%</div>
+      <div
+        class="product-item__label"
+        :class="'product-item__label--' + label.type"
+        v-for="label in productData.labels"
+        :key="label.type"
+      >
+        {{ label.value }}
+      </div>
     </div>
 
     <a href="" class="product-item__image _ibg">
