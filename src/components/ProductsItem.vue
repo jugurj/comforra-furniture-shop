@@ -5,19 +5,27 @@
     </div>
 
     <a href="" class="product-item__image _ibg">
-      <img src="@/assets/img/products/01.jpg" alt="Product image" />
+      <img :src="getImgUrl(productData.image)" alt="Product image" />
     </a>
 
     <div class="product-item__body">
       <div class="item-product__contet">
-        <h5 class="product-item__title">Syltherine</h5>
-        <div class="product-item__text">Stylish cafe chair</div>
+        <h5 class="product-item__title">
+          {{ productData.title }}
+        </h5>
+
+        <div class="product-item__text">
+          {{ productData.text }}
+        </div>
       </div>
 
       <div class="product-item__prices">
-        <div class="product-item__price">Rp 2.500.000</div>
+        <div class="product-item__price">
+          {{ "Rp " + productData.price }}
+        </div>
+
         <div class="product-item__price product-item__price--old">
-          Rp 3.000.000
+          {{ "Rp " + productData.priceOld }}
         </div>
       </div>
 
@@ -35,6 +43,14 @@
 <script>
 export default {
   name: "ProductsItem",
+  props: {
+    productData: Object,
+  },
+  methods: {
+    getImgUrl(imageName) {
+      return require("../assets/img/products/" + imageName);
+    },
+  },
 };
 </script>
 

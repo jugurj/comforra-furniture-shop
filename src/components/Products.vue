@@ -4,8 +4,12 @@
       <h2 class="products__title _title">Products</h2>
 
       <div class="products__items">
-        <div class="products__item">
-          <ProductsItem />
+        <div
+          class="products__item"
+          v-for="product in products"
+          :key="product.id"
+        >
+          <ProductsItem :productData="product" />
         </div>
       </div>
     </div>
@@ -14,15 +18,17 @@
 
 <script>
 import ProductsItem from "@/components/ProductsItem.vue";
-import products from "@/storage/products.json";
+import productsStorage from "@/storage/products.json";
 
 export default {
   name: "Products",
   components: {
     ProductsItem,
   },
-  created() {
-    console.log(products);
+  data() {
+    return {
+      products: productsStorage.products,
+    };
   },
 };
 </script>
