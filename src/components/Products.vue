@@ -6,15 +6,25 @@
       <div class="products__items">
         <div
           class="products__item"
-          v-for="product in products"
+          v-for="product in displayedProducts"
           :key="product.id"
         >
           <ProductsItem :productData="product" />
         </div>
       </div>
 
-      <div class="products__footer">
-        <a href="" class="products__more btn">Show more</a>
+      <div v-if="hasMoreProducts" class="products__footer">
+        <p v-if="moreProductsLoading" class="products__more--loading">
+          Loading...
+        </p>
+
+        <a
+          href="javascript:;"
+          @click="showMoreProducts"
+          class="products__more btn"
+        >
+          Show more
+        </a>
       </div>
     </div>
   </div>
@@ -32,7 +42,32 @@ export default {
   data() {
     return {
       products: productsStorage.products,
+      productsPerView: 4,
+      displayedProductsNumber: 4,
+      moreProductsLoading: false,
     };
+  },
+  computed: {
+    displayedProducts() {
+      if (this.products.length > this.displayedProductsNumber) {
+        return this.products.slice(0, this.displayedProductsNumber);
+      }
+
+      return this.products;
+    },
+    hasMoreProducts() {
+      return this.displayedProductsNumber < this.products.length;
+    },
+  },
+  methods: {
+    showMoreProducts() {
+      this.moreProductsLoading = true;
+
+      setTimeout(() => {
+        this.moreProductsLoading = false;
+        this.displayedProductsNumber += this.productsPerView;
+      }, 1000);
+    },
   },
 };
 </script>
@@ -60,6 +95,10 @@ export default {
     border: 1px solid $orangeColor;
     color: $orangeColor;
     min-width: 245px;
+
+    &--loading {
+      margin-bottom: 10px;
+    }
 
     &:hover {
       color: #fff;
