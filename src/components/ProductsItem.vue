@@ -31,7 +31,10 @@
           {{ "Rp " + productData.price }}
         </div>
 
-        <div class="product-item__price product-item__price--old">
+        <div
+          v-show="productData.priceOld"
+          class="product-item__price product-item__price--old"
+        >
           {{ "Rp " + productData.priceOld }}
         </div>
       </div>
