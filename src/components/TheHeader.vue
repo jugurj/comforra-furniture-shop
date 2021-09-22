@@ -406,7 +406,9 @@ export default {
     flex: 0 0 45px;
     height: 45px;
     color: #333;
-    font-size: 16px;
+    font-size: 18px;
+    display: grid;
+    place-items: center;
     transition: background-color 0.3s ease 0s;
 
     &:hover {
