@@ -157,6 +157,7 @@ export default {
       font-weight: normal;
       margin-left: 16px;
       color: #b0b0b0;
+      text-decoration: line-through;
     }
   }
 

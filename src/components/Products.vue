@@ -12,6 +12,10 @@
           <ProductsItem :productData="product" />
         </div>
       </div>
+
+      <div class="products__footer">
+        <a href="" class="products__more btn">Show more</a>
+      </div>
     </div>
   </div>
 </template>
@@ -45,6 +49,22 @@ export default {
     display: grid;
     gap: 32px;
     grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  }
+
+  &__footer {
+    padding-top: 32px;
+    text-align: center;
+  }
+
+  &__more {
+    border: 1px solid $orangeColor;
+    color: $orangeColor;
+    min-width: 245px;
+
+    &:hover {
+      color: #fff;
+      background-color: $orangeColor;
+    }
   }
 }
 </style>
