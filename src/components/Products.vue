@@ -43,8 +43,8 @@ export default {
 
   &__items {
     display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
   }
 }
 </style>
