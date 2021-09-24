@@ -1,5 +1,5 @@
 <template>
-  <article class="product-item">
+  <article class="product-item" :data-pid="productData.id">
     <div class="product-item__labels">
       <div
         class="product-item__label"
@@ -41,7 +41,12 @@
 
       <div class="product-item__actions actions-product">
         <div class="actions-product__body">
-          <a href="" class="actions-product__button btn">Add to cart</a>
+          <a
+            href="javascript:;"
+            class="actions-product__button btn"
+            @click="addCartClicked(productData.id, $event)"
+            >Add to cart</a
+          >
           <a href="" class="actions-product__link _icon-share">Share</a>
           <a href="" class="actions-product__link _icon-favorite">Like</a>
         </div>
@@ -59,6 +64,46 @@ export default {
   methods: {
     getImgUrl(imageName) {
       return require("../assets/img/products/" + imageName);
+    },
+    addCartClicked(productId, event) {
+      const buttonEl = event.target;
+
+      if (!buttonEl.classList.contains("_hold")) {
+        buttonEl.classList.add("_hold");
+        buttonEl.classList.add("_fly");
+
+        const cart = document.querySelector(".cart-header__icon");
+        const product = document.querySelector(`[data-pid="${productId}"]`);
+        const productImage = product.querySelector(".product-item__image");
+
+        const productImageFly = productImage.cloneNode(true);
+
+        const productImageFlyWidth = productImage.offsetWidth;
+        const productImageFlyHeight = productImage.offsetHeight;
+        const productImageFlyTop = productImage.getBoundingClientRect().top;
+        const productImageFlyLeft = productImage.getBoundingClientRect().left;
+
+        productImageFly.setAttribute("class", "_flyimage _ibg");
+        productImageFly.style.cssText = `
+        left: ${productImageFlyLeft}px;
+        top: ${productImageFlyTop}px;
+        width: ${productImageFlyWidth}px;
+        height: ${productImageFlyHeight}px;
+        `;
+
+        document.body.append(productImageFly);
+
+        const cartFlyLeft = cart.getBoundingClientRect().left;
+        const cartFlyTop = cart.getBoundingClientRect().top;
+
+        productImageFly.style.cssText = `
+        left: ${cartFlyLeft}px;
+        top: ${cartFlyTop}px;
+        width: 0px;
+        height: 0px;
+        opacity: 0
+        `;
+      }
     },
   },
 };
