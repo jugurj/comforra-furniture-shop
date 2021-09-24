@@ -103,7 +103,19 @@ export default {
         height: 0px;
         opacity: 0
         `;
+
+        productImageFly.addEventListener("transitionend", () => {
+          if (buttonEl.classList.contains("_fly")) {
+            productImageFly.remove();
+            this.updateCart(productId);
+            buttonEl.classList.remove("_fly");
+            buttonEl.classList.remove("_hold");
+          }
+        });
       }
+    },
+    updateCart(productId) {
+      console.log(productId);
     },
   },
 };
