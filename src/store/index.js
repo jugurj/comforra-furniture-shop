@@ -10,19 +10,19 @@ export default createStore({
     },
   },
   mutations: {
-    addCartItem(state, item) {
-      item.quantity = 1;
-      state.cart.push(item);
-    },
-
-    updateCartItem(state, updatedItem) {
-      state.cart = state.cart.map((cartItem) => {
-        if (cartItem.id == updatedItem.id) {
-          return updatedItem;
-        }
-
-        return cartItem;
-      });
+    addCartItem(state, updatedItem) {
+      if (state.cart.some((product) => product.id === updatedItem.id)) {
+        state.cart = state.cart.map((cartItem) => {
+          if (cartItem.id == updatedItem.id) {
+            updatedItem.quantity += 1;
+            return updatedItem;
+          }
+          return cartItem;
+        });
+      } else {
+        updatedItem.quantity = 1;
+        state.cart.push(updatedItem);
+      }
     },
 
     removeCartItem(state, item) {

@@ -107,15 +107,15 @@ export default {
         productImageFly.addEventListener("transitionend", () => {
           if (buttonEl.classList.contains("_fly")) {
             productImageFly.remove();
-            this.updateCart(productId);
+            this.updateCart();
             buttonEl.classList.remove("_fly");
             buttonEl.classList.remove("_hold");
           }
         });
       }
     },
-    updateCart(productId) {
-      console.log(productId);
+    updateCart() {
+      this.$store.commit("addCartItem", this.productData);
     },
   },
 };
