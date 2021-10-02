@@ -95,7 +95,9 @@
                 <span>0</span>
               </a>
               <div class="cart-header__body">
-                <ul class="cart-header__list cart-list"></ul>
+                <div class="cart-header__list">
+                  <CartList />
+                </div>
               </div>
             </div>
             <a
@@ -117,8 +119,13 @@
 </template>
 
 <script>
+import CartList from "@/components/CartList";
+
 export default {
   name: "TheHeader",
+  components: {
+    CartList,
+  },
   data() {
     return {
       searchFormOpen: false,
