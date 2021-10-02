@@ -254,6 +254,11 @@ export default {
     font-weight: 500;
     background-color: #fff;
 
+    &._hold {
+      opacity: 0.5;
+      cursor: default;
+    }
+
     &:hover {
       background-color: $orangeColor;
       color: #fff;

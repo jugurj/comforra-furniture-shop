@@ -22,6 +22,7 @@
           href="javascript:;"
           @click="showMoreProducts"
           class="products__more btn"
+          :class="{ _hold: moreProductsLoading }"
         >
           Show more
         </a>
@@ -98,6 +99,11 @@ export default {
 
     &--loading {
       margin-bottom: 10px;
+    }
+
+    &._hold {
+      opacity: 0.5;
+      cursor: default;
     }
 
     &:hover {
