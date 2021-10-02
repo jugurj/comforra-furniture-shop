@@ -1,5 +1,5 @@
 <template>
-  <ul class="cart-list" v-show="cart.length > 0">
+  <ul class="cart-list" :class="{ _active: cartOpened }">
     <li
       v-for="cartItem in cart"
       :key="cartItem.id"
@@ -25,6 +25,9 @@ import { mapState } from "vuex";
 
 export default {
   name: "CartList",
+  props: {
+    cartOpened: Boolean,
+  },
   computed: mapState({
     cart: "cart",
   }),
@@ -48,6 +51,27 @@ export default {
   padding: 15px;
   width: 300px;
   z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+  transform: translate(0, 20px);
+
+  &._active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+  }
+
+  @media (max-width: $md2 + px) {
+    top: 50px;
+  }
+
+  @media (max-width: $md3 + px) {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+  }
 
   &__item {
     display: flex;

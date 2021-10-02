@@ -90,12 +90,16 @@
               href=""
               class="actions-header__item actions-header__item--favorites _icon-favorite"
             ></a>
-            <div href="" class="actions-header__item cart-header">
-              <a href="" class="cart-header__icon _icon-cart">
-                <span>0</span>
+            <div class="actions-header__item cart-header">
+              <a
+                href=""
+                class="cart-header__icon _icon-cart"
+                @click.prevent="toggleCart"
+              >
+                <span>{{ cart.length }}</span>
               </a>
               <div class="cart-header__list">
-                <CartList />
+                <CartList :cartOpened="cartOpened" />
               </div>
             </div>
             <a
@@ -118,6 +122,7 @@
 
 <script>
 import CartList from "@/components/CartList";
+import { mapState } from "vuex";
 
 export default {
   name: "TheHeader",
@@ -127,12 +132,21 @@ export default {
   data() {
     return {
       searchFormOpen: false,
+      cartOpened: false,
     };
   },
   mounted() {
     this.bindScrollObserver();
   },
+  computed: mapState({
+    cart: "cart",
+  }),
   methods: {
+    toggleCart() {
+      if (this.cart.length > 0) {
+        this.cartOpened = !this.cartOpened;
+      }
+    },
     toggleSearchForm() {
       this.searchFormOpen = !this.searchFormOpen;
     },
