@@ -1,5 +1,5 @@
 <template>
-  <ul class="cart-list">
+  <ul class="cart-list" v-show="cart.length > 0">
     <li
       v-for="cartItem in cart"
       :key="cartItem.id"
@@ -36,4 +36,64 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.cart-list {
+  overflow: auto;
+  max-height: 200px;
+  background: #f4f5f7;
+  border: 1px solid #e0e0e0;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  padding: 15px;
+  width: 300px;
+  z-index: 5;
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      margin: 0 0 15px 0;
+    }
+  }
+
+  &__image {
+    flex: 0 0 100px;
+    height: 100px;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+  }
+
+  &__title {
+    color: inherit;
+    font-weight: 600;
+    transition: color 0.3s ease 0s;
+    margin-bottom: 16px;
+
+    &:hover {
+      color: $orangeColor;
+    }
+  }
+
+  &__quantity {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  &__delete {
+    color: red;
+    font-size: 14px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+</style>

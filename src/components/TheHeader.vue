@@ -94,10 +94,8 @@
               <a href="" class="cart-header__icon _icon-cart">
                 <span>0</span>
               </a>
-              <div class="cart-header__body">
-                <div class="cart-header__list">
-                  <CartList />
-                </div>
+              <div class="cart-header__list">
+                <CartList />
               </div>
             </div>
             <a
