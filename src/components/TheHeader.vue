@@ -99,7 +99,10 @@
                 <span>{{ cart.length }}</span>
               </a>
               <div class="cart-header__list">
-                <CartList :cartOpened="cartOpened" />
+                <CartList
+                  :cartOpened="cartOpened"
+                  @cart-item-removed="removeCartItem"
+                />
               </div>
             </div>
             <a
@@ -145,6 +148,13 @@ export default {
     toggleCart() {
       if (this.cart.length > 0) {
         this.cartOpened = !this.cartOpened;
+      }
+    },
+    removeCartItem(cartItem) {
+      this.$store.commit("removeCartItem", cartItem);
+
+      if (this.cart.length === 0) {
+        this.cartOpened = false;
       }
     },
     toggleSearchForm() {

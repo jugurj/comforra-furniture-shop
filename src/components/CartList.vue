@@ -14,7 +14,13 @@
         <div class="cart-list__quantity">
           Quantity: <span>{{ cartItem.quantity }}</span>
         </div>
-        <a href="" class="cart-list__delete">Delete</a>
+        <a
+          href=""
+          class="cart-list__delete"
+          @click.prevent="$emit('cart-item-removed', cartItem)"
+        >
+          Delete
+        </a>
       </div>
     </li>
   </ul>
