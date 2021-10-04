@@ -12,19 +12,33 @@
 
       <div class="rooms__slider slider-rooms">
         <div class="slider-rooms__body">
-          <div class="slider-rooms__slide">
-            <div class="slider-tooms__image _ibg">
-              <img :src="getImgUrl('01.jpg')" alt="Room image" />
-            </div>
-            <a href="" class="slider-rooms__content _icon-arrow-link">
-              <div class="slider-rooms__label label-slider">
-                <div class="label-slider__number">01</div>
-                <div class="label-slider__line"></div>
-                <div class="label-slider__text">Bed Room</div>
+          <Swiper
+            :navigation="swiperNavigation"
+            :pagination="swiperPagination"
+            :spaceBetween="24"
+            :slidesPerView="'auto'"
+            :loop="true"
+            :speed="800"
+            :loopAdditionalSlides="5"
+            :preloadImages="false"
+            :parallax="true"
+          >
+            <SwiperSlide>
+              <div class="slider-rooms__slide">
+                <div class="slider-tooms__image _ibg">
+                  <img :src="getImgUrl('01.jpg')" alt="Room image" />
+                </div>
+                <a href="" class="slider-rooms__content _icon-arrow-link">
+                  <div class="slider-rooms__label label-slider">
+                    <div class="label-slider__number">01</div>
+                    <div class="label-slider__line"></div>
+                    <div class="label-slider__text">Bed Room</div>
+                  </div>
+                  <div class="slider-rooms__title">Inner Peace</div>
+                </a>
               </div>
-              <div class="slider-rooms__title">Inner Peace</div>
-            </a>
-          </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
         <div class="slider-rooms__arrows slider-arrows">
           <button
@@ -43,8 +57,30 @@
 </template>
 
 <script>
+import SwiperCore, { Navigation, Pagination, Parallax } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/swiper-bundle.css";
+
+SwiperCore.use([Navigation, Pagination, Parallax]);
+
 export default {
   name: "Rooms",
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  data() {
+    return {
+      swiperPagination: {
+        clickable: true,
+        el: ".slider-rooms__dots",
+      },
+      swiperNavigation: {
+        nextEl: ".slider-rooms .slider-arrow--next",
+        prevEl: ".slider-rooms .slider-arrow--prev",
+      },
+    };
+  },
   methods: {
     getImgUrl(imageName) {
       return require("../assets/img/rooms/" + imageName);
