@@ -11,6 +11,10 @@
     <section class="page__products">
       <Products />
     </section>
+
+    <section class="page__rooms">
+      <Rooms />
+    </section>
   </main>
 </template>
 
@@ -18,6 +22,7 @@
 import MainSlider from "@/components/MainSlider";
 import Advantages from "@/components/Advantages";
 import Products from "@/components/Products";
+import Rooms from "@/components/Rooms";
 
 export default {
   name: "PageContent",
@@ -25,6 +30,7 @@ export default {
     MainSlider,
     Advantages,
     Products,
+    Rooms,
   },
 };
 </script>
