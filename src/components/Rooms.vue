@@ -53,4 +53,56 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.rooms {
+  background: #fcf8f3;
+  padding: 40px 0;
+
+  &__container {
+    @media (min-width: $md2 + px) {
+      display: flex;
+    }
+  }
+
+  &__body {
+    flex: 0 0 465 / 1240 * 100%;
+    position: relative;
+    z-index: 5;
+    align-self: center;
+
+    @media (min-width: $md2 + px) {
+      padding-right: 40px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  &__text {
+    line-height: 1.5;
+    font-weight: 500;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    background-color: $orangeColor;
+    color: #fff;
+    min-width: 180px;
+
+    &:hover {
+      background-color: darken($orangeColor, 10%);
+    }
+  }
+
+  &__slider {
+    flex: 1 1 auto;
+    min-width: 0;
+    align-self: flex-start;
+  }
+}
+</style>
