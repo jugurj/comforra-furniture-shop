@@ -24,19 +24,17 @@
             :parallax="true"
           >
             <SwiperSlide>
-              <div class="slider-rooms__slide">
-                <div class="slider-tooms__image _ibg">
-                  <img :src="getImgUrl('01.jpg')" alt="Room image" />
-                </div>
-                <a href="" class="slider-rooms__content _icon-arrow-link">
-                  <div class="slider-rooms__label label-slider">
-                    <div class="label-slider__number">01</div>
-                    <div class="label-slider__line"></div>
-                    <div class="label-slider__text">Bed Room</div>
-                  </div>
-                  <div class="slider-rooms__title">Inner Peace</div>
-                </a>
+              <div class="slider-rooms__image _ibg">
+                <img :src="getImgUrl('01.jpg')" alt="Room image" />
               </div>
+              <a href="" class="slider-rooms__content _icon-arrow-link">
+                <div class="slider-rooms__label label-slider">
+                  <div class="label-slider__number">01</div>
+                  <div class="label-slider__line"></div>
+                  <div class="label-slider__text">Bed Room</div>
+                </div>
+                <div class="slider-rooms__title">Inner Peace</div>
+              </a>
             </SwiperSlide>
           </Swiper>
         </div>
@@ -83,7 +81,7 @@ export default {
   },
   methods: {
     getImgUrl(imageName) {
-      return require("../assets/img/rooms/" + imageName);
+      return require("@/assets/img/rooms/" + imageName);
     },
   },
 };
@@ -139,6 +137,52 @@ export default {
     flex: 1 1 auto;
     min-width: 0;
     align-self: flex-start;
+  }
+}
+
+.slider-rooms {
+  .swiper-container {
+    overflow: visible;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      background-color: #fcf8f3;
+      z-index: 2;
+      transform: translate(-100%, 0px);
+    }
+  }
+
+  .swiper-slide {
+    width: 370px;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+
+    &-active {
+      .slider-rooms__image {
+        padding-bottom: 500px/370px * 100%;
+      }
+    }
+  }
+
+  &__image {
+    transition: padding 0.8s ease 0s;
+    height: 100%;
+    padding-bottom: 400px/370px * 100%;
+
+    @media (mix-width: $md3 + px) {
+      height: 83%;
+    }
+  }
+
+  &__content {
+    position: absolute;
   }
 }
 </style>
