@@ -136,8 +136,6 @@ export default {
   padding: 40px 0;
 
   &__container {
-    overflow: hidden;
-
     @media (min-width: $md2 + px) {
       display: flex;
     }
@@ -186,6 +184,8 @@ export default {
 }
 
 .slider-rooms {
+  position: relative;
+
   .swiper-container {
     overflow: visible;
     position: relative;
@@ -195,7 +195,7 @@ export default {
       position: absolute;
       top: 0;
       height: 100%;
-      width: 100%;
+      width: 100vw;
       left: 0;
       background-color: #fcf8f3;
       z-index: 2;
@@ -209,7 +209,15 @@ export default {
     overflow: hidden;
     min-height: 500px;
 
+    .slider-rooms__content {
+      pointer-events: none;
+    }
+
     &-active {
+      .slider-rooms__content {
+        pointer-events: auto;
+      }
+
       .slider-rooms__image {
         padding-bottom: 500px/370px * 100%;
       }
@@ -249,9 +257,36 @@ export default {
       align-items: center;
     }
   }
+
   &__title {
     font-weight: 600;
     font-size: 24px;
+  }
+
+  &__arrows {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: calc(100% + 42px);
+    left: -24px;
+    z-index: 5;
+    justify-content: space-between;
+
+    .slider-arrow {
+      pointer-events: auto;
+    }
+  }
+
+  &__dots {
+    z-index: 5;
+
+    @media (min-width: $md3 + px) {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      left: 400px;
+    }
   }
 }
 
