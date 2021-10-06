@@ -150,6 +150,10 @@ export default {
     @media (min-width: $md2 + px) {
       padding-right: 40px;
     }
+
+    @media (max-width: $md2 + px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__title {
@@ -222,6 +226,10 @@ export default {
         padding-bottom: 500px/370px * 100%;
       }
     }
+
+    @media (max-width: $md4 + px) {
+      width: 100%;
+    }
   }
 
   &__image {
@@ -268,10 +276,15 @@ export default {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    width: calc(100% + 42px);
-    left: -24px;
+    width: calc(100% - 42px);
+    left: 24px;
     z-index: 5;
     justify-content: space-between;
+
+    @media (min-width: $md1+px) {
+      left: -24px;
+      width: calc(100% + 42px);
+    }
 
     .slider-arrow {
       pointer-events: auto;
@@ -286,6 +299,11 @@ export default {
       bottom: 30px;
       width: 100%;
       left: 400px;
+    }
+
+    @media (max-width: $md3 + px) {
+      justify-content: center;
+      padding-top: 15px;
     }
   }
 }
