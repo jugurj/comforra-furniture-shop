@@ -15,7 +15,7 @@
           <Swiper
             :navigation="swiperNavigation"
             :pagination="swiperPagination"
-            :spaceBetween="24"
+            :spaceBetween="30"
             :slidesPerView="'auto'"
             :loop="true"
             :speed="800"
@@ -27,9 +27,52 @@
               <div class="slider-rooms__image _ibg">
                 <img :src="getImgUrl('01.jpg')" alt="Room image" />
               </div>
-              <a href="" class="slider-rooms__content _icon-arrow-link">
+              <a
+                href=""
+                data-swiper-parallax-opacity="0"
+                data-swiper-parallax-x="100%"
+                class="slider-rooms__content _icon-arrow-link"
+              >
                 <div class="slider-rooms__label label-slider">
                   <div class="label-slider__number">01</div>
+                  <div class="label-slider__line"></div>
+                  <div class="label-slider__text">Bed Room</div>
+                </div>
+                <div class="slider-rooms__title">Inner Peace</div>
+              </a>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div class="slider-rooms__image _ibg">
+                <img :src="getImgUrl('02.jpg')" alt="Room image" />
+              </div>
+              <a
+                href=""
+                data-swiper-parallax-opacity="0"
+                data-swiper-parallax-x="100%"
+                class="slider-rooms__content _icon-arrow-link"
+              >
+                <div class="slider-rooms__label label-slider">
+                  <div class="label-slider__number">02</div>
+                  <div class="label-slider__line"></div>
+                  <div class="label-slider__text">Bed Room</div>
+                </div>
+                <div class="slider-rooms__title">Inner Peace</div>
+              </a>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div class="slider-rooms__image _ibg">
+                <img :src="getImgUrl('03.jpg')" alt="Room image" />
+              </div>
+              <a
+                href=""
+                data-swiper-parallax-opacity="0"
+                data-swiper-parallax-x="100%"
+                class="slider-rooms__content _icon-arrow-link"
+              >
+                <div class="slider-rooms__label label-slider">
+                  <div class="label-slider__number">03</div>
                   <div class="label-slider__line"></div>
                   <div class="label-slider__text">Bed Room</div>
                 </div>
@@ -93,6 +136,8 @@ export default {
   padding: 40px 0;
 
   &__container {
+    overflow: hidden;
+
     @media (min-width: $md2 + px) {
       display: flex;
     }
@@ -183,6 +228,48 @@ export default {
 
   &__content {
     position: absolute;
+    color: inherit;
+    max-width: 240px;
+    left: 20px;
+    bottom: 20px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.7);
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translate(100%, 0px);
+      width: 48px;
+      height: 48px;
+      background-color: $orangeColor;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+  }
+}
+
+.label-slider {
+  display: grid;
+  color: $darkGrayColor;
+  gap: 8px;
+  align-items: center;
+  justify-content: start;
+  grid-template-columns: auto 27px auto;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &__line {
+    height: 1px;
+    background-color: $darkGrayColor;
   }
 }
 </style>
