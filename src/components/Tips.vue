@@ -11,6 +11,7 @@
             :slidesPerView="3"
             :loop="true"
             :speed="800"
+            :breakpoints="swiperBreakpoints"
           >
             <SwiperSlide>
               <a href="" class="slider-tips__image _ibg">
@@ -87,6 +88,20 @@ export default {
       swiperNavigation: {
         nextEl: ".slider-tips .slider-arrow--next",
         prevEl: ".slider-tips .slider-arrow--prev",
+      },
+      swiperBreakpoints: {
+        320: {
+          slidesPerView: 1.1,
+          spaceBeetwen: 15,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBeetwen: 20,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBeetwen: 30,
+        },
       },
     };
   },
@@ -171,13 +186,17 @@ export default {
     z-index: 5;
     justify-content: space-between;
 
-    @media (min-width: $md1+px) {
+    @media (min-width: $md1 + px) {
       left: -24px;
       width: calc(100% + 42px);
     }
 
     .slider-arrow {
       pointer-events: auto;
+    }
+
+    @media (max-width: $md3 + px) {
+      display: none;
     }
   }
 }
