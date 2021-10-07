@@ -14,7 +14,7 @@
           >
             <SwiperSlide>
               <a href="" class="slider-tips__image _ibg">
-                <img src="img/tips/01.jpg" alt="" />
+                <img src="@/assets/img/tips/01.jpg" alt="" />
               </a>
               <div class="slider-tips__content">
                 <a href="" class="slider-tips__title"
@@ -69,4 +69,63 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.tips {
+  padding: 40px 0;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+}
+
+.slider-tips {
+  .swiper-container {
+    position: relative;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease 0s;
+
+    &:hover {
+      box-shadow: 0 0 30px rgba(97, 97, 97, 0.2);
+    }
+  }
+
+  &__image {
+    padding-bottom: 250/390 * 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    flex: 1 1 auto;
+    align-items: flex-start;
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    color: inherit;
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 24px;
+    transition: all 0.3s ease 0s;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      color: $orangeColor;
+    }
+
+    &__text {
+      color: $grayColor;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+}
+</style>
