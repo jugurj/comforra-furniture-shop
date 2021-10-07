@@ -23,6 +23,30 @@
                 <div class="slider-tips__text">20 jan 2020</div>
               </div>
             </SwiperSlide>
+
+            <SwiperSlide>
+              <a href="" class="slider-tips__image _ibg">
+                <img src="@/assets/img/tips/02.jpg" alt="" />
+              </a>
+              <div class="slider-tips__content">
+                <a href="" class="slider-tips__title"
+                  >Solution for clean look working space</a
+                >
+                <div class="slider-tips__text">10 jan 2020</div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <a href="" class="slider-tips__image _ibg">
+                <img src="@/assets/img/tips/03.jpg" alt="" />
+              </a>
+              <div class="slider-tips__content">
+                <a href="" class="slider-tips__title"
+                  >Make your cooking activity more fun with good setup</a
+                >
+                <div class="slider-tips__text">23 mar 2020</div>
+              </div>
+            </SwiperSlide>
           </Swiper>
           <div class="slider-tips__dots"></div>
           <div class="slider-tips__arrows slider-arrows">
@@ -79,8 +103,9 @@ export default {
 }
 
 .slider-tips {
+  position: relative;
+
   .swiper-container {
-    position: relative;
     margin-left: -15px;
     margin-right: -15px;
     padding: 15px;
@@ -123,11 +148,36 @@ export default {
     &:hover {
       color: $orangeColor;
     }
+  }
 
-    &__text {
-      color: $grayColor;
-      font-size: 14px;
-      line-height: 1.5;
+  &__text {
+    color: $grayColor;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  &__dots {
+    padding-top: 10px;
+    justify-content: center;
+  }
+
+  &__arrows {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: calc(100% - 42px);
+    left: 24px;
+    z-index: 5;
+    justify-content: space-between;
+
+    @media (min-width: $md1+px) {
+      left: -24px;
+      width: calc(100% + 42px);
+    }
+
+    .slider-arrow {
+      pointer-events: auto;
     }
   }
 }
