@@ -81,15 +81,18 @@ export default {
 .slider-tips {
   .swiper-container {
     position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px;
   }
 
   .swiper-slide {
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.3s ease 0s;
+    transition: box-shadow 0.4s ease-in-out 0s;
 
     &:hover {
-      box-shadow: 0 0 30px rgba(97, 97, 97, 0.2);
+      box-shadow: 0 0 15px rgba(97, 97, 97, 0.2);
     }
   }
 
