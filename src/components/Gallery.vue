@@ -122,4 +122,60 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.gallery {
+  padding: 40px 0;
+
+  &__label {
+    text-align: center;
+    color: $darkGrayColor;
+    line-height: 1.5;
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    @media (any-hover: none) {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 16px;
+
+    @media (any-hover: hover) {
+      justify-content: center;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 -8px;
+
+    &:first-child {
+      justify-content: flex-end;
+    }
+  }
+
+  &__row {
+    display: inline-grid;
+    padding: 0 8px;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 16px;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}
+</style>
