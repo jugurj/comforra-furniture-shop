@@ -4,7 +4,7 @@
       <div class="gallery__label">Share your setup with</div>
       <h2 class="gallery__title _title">#ComforraFurniture</h2>
 
-      <div class="gallery__body">
+      <div data-speed="0.01" class="gallery__body">
         <div class="gallery__items">
           <div class="gallery__column">
             <div class="gallery__row row-gallery row-gallery--left-top">
@@ -119,6 +119,61 @@
 <script>
 export default {
   name: "Gallery",
+  mounted() {
+    const furniture = document.querySelector(".gallery__body");
+
+    if (furniture && !this.isMobile()) {
+      const furnitureItems = document.querySelector(".gallery__items");
+      const furnitureColumn = document.querySelectorAll(".gallery__column");
+
+      const speed = furniture.dataset.speed;
+
+      let positionX = 0;
+      let coordXpercent = 0;
+
+      const setMouseGalleryStyle = () => {
+        let furnitureItemsWidth = 0;
+
+        furnitureColumn.forEach((e) => {
+          furnitureItemsWidth += e.offsetWidth;
+        });
+
+        const furnitureDifferent = furnitureItemsWidth - furniture.offsetWidth;
+        const distX = Math.floor(coordXpercent - positionX);
+
+        positionX = positionX + distX * speed;
+        let position = (furnitureDifferent / 200) * positionX;
+
+        furnitureItems.style.cssText = `transform: translate3d(${-position}px, 0, 0)`;
+
+        if (Math.abs(distX) > 0) {
+          requestAnimationFrame(setMouseGalleryStyle);
+        } else {
+          furniture.classList.remove("_init");
+        }
+      };
+
+      furniture.addEventListener("mousemove", function(e) {
+        const furnitureWidth = furniture.offsetWidth;
+        const coordX = e.pageX - furnitureWidth / 2;
+        coordXpercent = (coordX / furnitureWidth) * 200;
+
+        if (!furniture.classList.contains("_init")) {
+          requestAnimationFrame(setMouseGalleryStyle);
+          furniture.classList.add("_init");
+        }
+      });
+    }
+  },
+  methods: {
+    isMobile() {
+      if (screen.width <= 760) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
 };
 </script>
 
