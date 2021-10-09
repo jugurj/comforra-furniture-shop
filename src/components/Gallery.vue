@@ -178,4 +178,41 @@ export default {
     }
   }
 }
+
+.row-gallery {
+  &--left-top {
+    justify-content: end;
+    align-items: end;
+  }
+
+  &--left-bottom {
+    justify-content: end;
+    align-items: start;
+  }
+
+  &--center {
+    display: block;
+  }
+
+  &--right-top {
+    align-items: end;
+  }
+
+  &--right-bottom {
+    align-items: start;
+  }
+
+  &__item {
+    @media (any-hover: hover) {
+      img {
+        transition: all 0.8s ease 0s;
+        filter: grayscale(0.6);
+      }
+
+      &:hover img {
+        filter: grayscale(0);
+      }
+    }
+  }
+}
 </style>
