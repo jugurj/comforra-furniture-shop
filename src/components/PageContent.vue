@@ -19,6 +19,10 @@
     <section class="page__tips">
       <Tips />
     </section>
+
+    <section class="page__gallery">
+      <Gallery />
+    </section>
   </main>
 </template>
 
@@ -28,6 +32,7 @@ import Advantages from "@/components/Advantages";
 import Products from "@/components/Products";
 import Rooms from "@/components/Rooms";
 import Tips from "@/components/Tips";
+import Gallery from "@/components/Gallery";
 
 export default {
   name: "PageContent",
@@ -37,6 +42,7 @@ export default {
     Products,
     Rooms,
     Tips,
+    Gallery,
   },
 };
 </script>
